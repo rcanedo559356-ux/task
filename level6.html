@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 6</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Level 6</h5>
+                <p class="card-text">Conditionals: Door selection.</p>
+                <div class="d-flex justify-content-around">
+                    <button class="btn btn-primary" id="door1">Door 1</button>
+                    <button class="btn btn-primary" id="door2">Door 2</button>
+                    <button class="btn btn-primary" id="door3">Door 3</button>
+                </div>
+                <div id="result" class="mt-3 text-center"></div>
+                <a href="level1.html" class="btn btn-secondary mt-3">Restart</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const door1Btn = document.getElementById('door1');
+        const door2Btn = document.getElementById('door2');
+        const door3Btn = document.getElementById('door3');
+        const resultDiv = document.getElementById('result');
+
+        const correctDoor = Math.floor(Math.random() * 3) + 1;
+
+        door1Btn.addEventListener('click', function() {
+            checkDoor(1);
+        });
+
+        door2Btn.addEventListener('click', function() {
+            checkDoor(2);
+        });
+
+        door3Btn.addEventListener('click', function() {
+            checkDoor(3);
+        });
+
+        function checkDoor(doorNumber) {
+            if (doorNumber === correctDoor) {
+                resultDiv.textContent = 'Congratulations! You found the correct door!';
+            } else {
+                resultDiv.textContent = 'Sorry, that was the wrong door. Try again!';
+            }
+        }
+    </script>
+</body>
+</html>

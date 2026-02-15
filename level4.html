@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 4</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Level 4</h5>
+                <p class="card-text">Enter a name. Empty = error, filled = success.</p>
+                <form id="name-form">
+                    <div class="form-group">
+                        <label for="name-input">Name:</label>
+                        <input type="text" class="form-control" id="name-input">
+                        <div id="name-error" class="error"></div>
+                        <div id="name-success" class="success"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <a href="level3.html" class="btn btn-secondary">Back</a>
+                <a href="level5.html" class="btn btn-primary">Next</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const nameForm = document.getElementById('name-form');
+        const nameInput = document.getElementById('name-input');
+        const nameError = document.getElementById('name-error');
+        const nameSuccess = document.getElementById('name-success');
+
+        nameForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (nameInput.value.trim() === '') {
+                nameError.textContent = 'Name is required.';
+                nameSuccess.textContent = '';
+            } else {
+                nameSuccess.textContent = 'Success! Your name is ' + nameInput.value;
+                nameError.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>

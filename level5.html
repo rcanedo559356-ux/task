@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 5</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Level 5</h5>
+                <p class="card-text">Use + and - buttons. Coins cannot go below 0.</p>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-secondary" id="decrease-btn">-</button>
+                    <span class="mx-3" id="coin-count">0</span>
+                    <button class="btn btn-primary" id="increase-btn">+</button>
+                </div>
+                <a href="level4.html" class="btn btn-secondary mt-3">Back</a>
+                <a href="level6.html" class="btn btn-primary mt-3">Next</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        let coinCount = 0;
+        const coinCountSpan = document.getElementById('coin-count');
+        const decreaseBtn = document.getElementById('decrease-btn');
+        const increaseBtn = document.getElementById('increase-btn');
+
+        decreaseBtn.addEventListener('click', function() {
+            if (coinCount > 0) {
+                coinCount--;
+                coinCountSpan.textContent = coinCount;
+            }
+        });
+
+        increaseBtn.addEventListener('click', function() {
+            coinCount++;
+            coinCountSpan.textContent = coinCount;
+        });
+    </script>
+</body>
+</html>
